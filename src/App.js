@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Nav from './components/Nav';
+import CountryScoreTable from './components/CountryScoreTable';
+import CorruptionChart from './components/CorruptionChart';
+import SocialSupportChart from './components/SocialSupportChart';
+import GDPChart from './components/GDPChart';
+import GenerosityChart from './components/GenerosityChart';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  constructor() {
+    super();
+    // this.state;
+  }
+
+  render() {
+    return (
+      <div>
+        <Nav />
+        <div className='wrapper'>
+          <div className='row'>
+            <div className='col s6'>
+              <CountryScoreTable />
+            </div>
+            <div className='col s6'>
+              <SocialSupportChart />
+            </div>
+            <div className='col s6'>
+              <GenerosityChart />
+            </div>
+            <div className='col s6'>
+              <CorruptionChart />
+            </div>
+            <div className='col s6'>
+              <GDPChart />
+            </div>
+          </div>
+          <footer></footer>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
