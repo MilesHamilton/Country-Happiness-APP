@@ -16,13 +16,13 @@ export class App extends Component {
     };
   }
 
-  componentDidMount = () => {
-    axios.get('https://enigmatic-temple-08680.herokuapp.com/').then((res) => {
-      this.setState({
-        data: res.data,
-      });
-    });
-  };
+  // componentDidMount = () => {
+  //   axios.get('https://enigmatic-temple-08680.herokuapp.com/').then((res) => {
+  //     this.setState({
+  //       data: res.data,
+  //     });
+  //   });
+  // };
 
   render() {
     console.log(this.state);

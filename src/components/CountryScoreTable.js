@@ -2,36 +2,43 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const CountryScoreTable = () => {
-  const [data, setdata] = useState([]);
+  const [data, setData] = useState([]);
 
-  const getData = () => {
-    axios.get('https://enigmatic-temple-08680.herokuapp.com/').then((res) => {
-      data(res.data);
+  console.log(data)
+
+  useEffect(async () => {
+    const url = await axios('https://enigmatic-temple-08680.herokuapp.com/',
+    )
+    setData(url.data)
+}, [])
+
+  const removeData = (id) => {
+    axios.delete(`${URL}/${id}`).then(() => {
+      const del = data.filter((data) => id !== data.id);
+      setData(del);
     });
   };
 
-  const useEffect =
-    (() => {
-      getData();
-    },
-    []);
-
   const renderBody = () => {
-    return (
-      data &&
-      data.map(({ country, Score }) => {
-        return (
-          <tr key>
-            <td>{country['Country or region']}</td>
-            <td>{Score}</td>
+    console.log(data);
+    return data && data.map(data => {
+        console.log(data)
+        return ( 
+          <tr key={data.id}>
+            <td>{data['Country or region']}</td>
+            <td>{data.Score}</td>
+            <td className='operation'>
+              <button onClick={() => removeData(data.id)}>Delete</button>
+            </td>
           </tr>
         );
-      })
-    );
-  };
+      }
+      )
+  }
+
 
   return (
-    <div>
+    <>
       <table className='highlight'>
         <thead>
           <tr>
@@ -39,9 +46,9 @@ const CountryScoreTable = () => {
           </tr>
         </thead>
 
-        <tbody>{/* <tr>{this.props['Country or region']}</tr> */}</tbody>
+        <tbody>{renderBody()}</tbody>
       </table>
-    </div>
+    </>
   );
 };
 
