@@ -20,7 +20,6 @@ const CountryScoreTable = () => {
   };
 
   const renderBody = () => {
-    console.log(data);
     return data && data.map(data => {
         console.log(data)
         return ( 
