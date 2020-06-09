@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { VictoryChart, VictoryBar, VictoryTheme } from 'victory';
+import { VictoryChart, VictoryBar } from 'victory';
 
 export class CorruptionChart extends Component {
   render() {

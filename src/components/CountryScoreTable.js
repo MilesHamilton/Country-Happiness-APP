@@ -1,32 +1,48 @@
-import React, { Component } from 'react';
-import { VictoryChart, VictoryScatter, VictoryTheme } from 'victory';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export class CountryScoreTable extends Component {
-  render() {
+const CountryScoreTable = () => {
+  const [data, setdata] = useState([]);
+
+  const getData = () => {
+    axios.get('https://enigmatic-temple-08680.herokuapp.com/').then((res) => {
+      data(res.data);
+    });
+  };
+
+  const useEffect =
+    (() => {
+      getData();
+    },
+    []);
+
+  const renderBody = () => {
     return (
-      <div>
-        <VictoryChart
-          // theme={VictoryTheme.material}
-          domain={{ x: [0, 5], y: [0, 7] }}
-          width={200}
-          height={200}
-          labels={0}
-        >
-          <VictoryScatter
-            style={{ data: { fill: '#c43a31' } }}
-            size={2}
-            data={[
-              { x: 1, y: 2 },
-              { x: 2, y: 3 },
-              { x: 3, y: 5 },
-              { x: 4, y: 4 },
-              { x: 5, y: 7 },
-            ]}
-          />
-        </VictoryChart>
-      </div>
+      data &&
+      data.map(({ country, Score }) => {
+        return (
+          <tr key>
+            <td>{country['Country or region']}</td>
+            <td>{Score}</td>
+          </tr>
+        );
+      })
     );
-  }
-}
+  };
+
+  return (
+    <div>
+      <table className='highlight'>
+        <thead>
+          <tr>
+            <th>Full Rankings</th>
+          </tr>
+        </thead>
+
+        <tbody>{/* <tr>{this.props['Country or region']}</tr> */}</tbody>
+      </table>
+    </div>
+  );
+};
 
 export default CountryScoreTable;
