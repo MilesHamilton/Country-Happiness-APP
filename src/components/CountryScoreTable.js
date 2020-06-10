@@ -4,37 +4,46 @@ import axios from 'axios';
 const CountryScoreTable = () => {
   const [data, setData] = useState([]);
 
-  console.log(data)
+  // console.log(data);
 
-  useEffect(async () => {
-    const url = await axios('https://enigmatic-temple-08680.herokuapp.com/',
-    )
-    setData(url.data)
-}, [])
+  useEffect(() => {
+    const fetch = async () => {
+      const res = await axios('https://enigmatic-temple-08680.herokuapp.com/');
+      setData(res.data);
+    };
+    fetch();
+  }, []);
 
   const removeData = (id) => {
-    axios.delete(`${URL}/${id}`).then(() => {
-      const del = data.filter((data) => id !== data.id);
-      setData(del);
-    });
+    const url = `https://enigmatic-temple-08680.herokuapp.com/${id}`;
+    axios
+      .delete(url)
+      .then(() => {
+        const del = data.filter((elm) => id !== elm._id);
+        setData(del);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+  // console.log(removeData())
 
   const renderBody = () => {
-    return data && data.map(data => {
-        console.log(data)
-        return ( 
-          <tr key={data.id}>
-            <td>{data['Country or region']}</td>
-            <td>{data.Score}</td>
+    return (
+      data &&
+      data.map((elm) => {
+        return (
+          <tr key={elm._id}>
+            <td>{elm['Country or region']}</td>
+            <td>{elm.Score}</td>
             <td className='operation'>
-              <button onClick={() => removeData(data.id)}>Delete</button>
+              <button onClick={() => removeData(elm._id)}>Delete</button>
             </td>
           </tr>
         );
-      }
-      )
-  }
-
+      })
+    );
+  };
 
   return (
     <>
@@ -44,7 +53,6 @@ const CountryScoreTable = () => {
             <th>Full Rankings</th>
           </tr>
         </thead>
-
         <tbody>{renderBody()}</tbody>
       </table>
     </>

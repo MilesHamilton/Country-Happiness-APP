@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
 import { VictoryPie } from 'victory';
-export class GenerosityChart extends Component {
-  render() {
-    return (
-      <div>
-        <VictoryPie
-          padAngle={({ datum }) => datum.y}
-          innerRadius={50}
-          // data={sampleData}
-        />
-      </div>
-    );
-  }
-}
+import React, { useState, useEffect } from 'react';
 
-export default GenerosityChart;
+export default function GenerosityChart() {
+  const [data, setData] = useState({});
+
+  useEffect(async () => {
+    const url = await 'https://enigmatic-temple-08680.herokuapp.com/';
+    console.log(url);
+    setData(url.data);
+  }, []);
+
+  return (
+    <div>
+      <VictoryPie
+        padAngle={({ datum }) => datum.y}
+        innerRadius={50}
+        // data={sampleData}
+      />
+    </div>
+  );
+}

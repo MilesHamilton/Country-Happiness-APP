@@ -13,10 +13,12 @@
     "plotly.js": "^1.54.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hooks-paginator": "^0.4.4",
     "react-plotly.js": "^2.4.0",
     "react-router": "^5.2.0",
     "react-scripts": "3.4.1",
-    "victory": "^34.3.9"
+    "victory": "^34.3.9",
+    "yup": "^0.29.1"
   },
   "scripts": {
     "start": "react-scripts start",
