@@ -1,50 +1,77 @@
-import React, { Component } from 'react';
 import {
   VictoryChart,
   VictoryPolarAxis,
-  VictoryStack,
-  VictoryZoomContainer,
   VictoryBar,
+  VictoryTheme,
 } from 'victory';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export default function SocialSupportChart() {
-  const [data, setData] = useState({});
+const SocialSupportChart = () => {
+  const [data, setData] = useState([]);
 
-  useEffect(async () => {
-    const url = await 'https://enigmatic-temple-08680.herokuapp.com/';
-    console.log(url);
-    setData(url.data);
+  useEffect(() => {
+    const fetch = async () => {
+      const res = await axios(
+        'https://enigmatic-temple-08680.herokuapp.com/page/1/10'
+      );
+      setData(res.data);
+      console.log(res.data);
+    };
+    fetch();
   }, []);
 
+  const handleCountryData = () => {
+    return (
+      data &&
+      data.map((elm) => {
+        return elm['Country or region'];
+      })
+    );
+  };
+
+  const handleSocialData = () => {
+    return (
+      data &&
+      data.map((elm) => {
+        return elm['Social support'];
+      })
+    );
+  };
+
+  console.log();
+
   return (
-    <div>
-      <VictoryChart
-        polar
-        maxDomain={{ x: 360 }}
-        height={150}
-        width={150}
-        padding={30}
-        // containerComponent={<VictoryZoomContainer />}
-      >
-        <VictoryPolarAxis
-          dependentAxis
-          style={{
-            axis: { stroke: 'none' },
-            tickLabels: { fill: 'none' },
-            grid: { stroke: 'grey', strokeDasharray: '4, 8' },
-          }}
+    <>
+      <VictoryChart polar theme={VictoryTheme.material}>
+        {[handleCountryData].map((d, i) => {
+          return (
+            <VictoryPolarAxis
+              dependentAxis
+              key={i}
+              label={d}
+              labelPlacement='perpendicular'
+              style={{ tickLabels: { fill: 'none' } }}
+              axisValue={d}
+            />
+          );
+        })}
+        <VictoryBar
+          style={{ data: { fill: 'tomato', width: 25 } }}
+          data={[
+            { handleCountryData },
+            { handleSocialData },
+            // { x: 'cat', y: 1.2 },
+            // { x: 'dog', y: 1.5 },
+            // { x: 'bird', y: 1.2 },
+            // { x: 'frog', y: 1.9 },
+            // { x: 'fish', y: 1.2 },
+            // { x: 'monkey', y: 1.2 },
+          ]}
         />
-        <VictoryPolarAxis tickValues={[0, 45, 90, 135, 180, 225, 270, 315]} />
-        <VictoryStack
-          colorScale={['#ad1b11', '#c43a31', '#dc7a6b']}
-          style={{ data: { width: 50 } }}
-        >
-          <VictoryBar />
-          <VictoryBar />
-          <VictoryBar />
-        </VictoryStack>
       </VictoryChart>
-    </div>
+    </>
   );
-}
+};
+
+export default SocialSupportChart;

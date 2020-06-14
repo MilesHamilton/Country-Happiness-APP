@@ -7,11 +7,9 @@ import axios from 'axios';
 export default function Form() {
   const [data, setData] = useState([]);
 
-  console.log(data);
-
   useEffect(async () => {
     const url = await axios('https://enigmatic-temple-08680.herokuapp.com/');
-    console.log(url);
+    //  console.log(url);
     setData(url.data);
   }, []);
 

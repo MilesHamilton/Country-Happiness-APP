@@ -1,8 +1,38 @@
 import { VictoryVoronoi } from 'victory';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export default function GDPChart() {
-  const [data, setData] = useState({});
+const GDPChart = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const res = await axios(
+        'https://enigmatic-temple-08680.herokuapp.com/page/1/10'
+      );
+      setData(res.data);
+      console.log(res.data);
+    };
+    fetch();
+  }, []);
+
+  const handleCountryData = () => {
+    return (
+      data &&
+      data.map((elm) => {
+        return elm['Country or region'];
+      })
+    );
+  };
+
+  const handleSocialData = () => {
+    return (
+      data &&
+      data.map((elm) => {
+        return elm['Social support'];
+      })
+    );
+  };
 
   return (
     <div>
@@ -20,4 +50,6 @@ export default function GDPChart() {
       />
     </div>
   );
-}
+};
+
+export default GDPChart;
