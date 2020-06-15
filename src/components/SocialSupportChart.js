@@ -58,16 +58,9 @@ const SocialSupportChart = () => {
         })}
         <VictoryBar
           style={{ data: { fill: 'tomato', width: 25 } }}
-          data={[
-            { handleCountryData },
-            { handleSocialData },
-            // { x: 'cat', y: 1.2 },
-            // { x: 'dog', y: 1.5 },
-            // { x: 'bird', y: 1.2 },
-            // { x: 'frog', y: 1.9 },
-            // { x: 'fish', y: 1.2 },
-            // { x: 'monkey', y: 1.2 },
-          ]}
+          data={[{ handleSocialData }]}
+          x='Country or region'
+          y='Social Support'
         />
       </VictoryChart>
     </>

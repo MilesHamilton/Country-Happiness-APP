@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export default function GenerosityChart() {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     const fetch = async () => {
       const res = await axios(
@@ -22,22 +23,37 @@ export default function GenerosityChart() {
       })
     );
   };
+  console.log(handleCountryData());
 
-  const handleSocialData = () => {
+  const handleGenerosityData = () => {
     return (
       data &&
       data.map((elm) => {
-        return elm['Social support'];
+        return elm['Generosity'];
       })
     );
   };
+  console.log(handleGenerosityData());
 
   return (
     <div>
       <VictoryPie
-        padAngle={({ datum }) => datum.y}
+        // padAngle={({ datum }) => datum.y}
         innerRadius={50}
-        // data={sampleData}
+        colorScale={[
+          'tomato',
+          'orange',
+          'gold',
+          'cyan',
+          'navy',
+          'blue',
+          'red',
+          'skyblue',
+          'brown',
+          'pink',
+        ]}
+        data={handleGenerosityData()}
+        labels={handleCountryData()}
       />
     </div>
   );
