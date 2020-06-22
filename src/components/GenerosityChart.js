@@ -1,4 +1,4 @@
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryTooltip } from 'victory';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -37,9 +37,10 @@ export default function GenerosityChart() {
 
   return (
     <div>
+      <h3>Country Generosity Chart</h3>
       <VictoryPie
-        // padAngle={({ datum }) => datum.y}
-        innerRadius={50}
+        labelComponent={<VictoryTooltip cornerRadius={0} />}
+        innerRadius={80}
         colorScale={[
           'tomato',
           'orange',
@@ -53,7 +54,7 @@ export default function GenerosityChart() {
           'pink',
         ]}
         data={handleGenerosityData()}
-        labels={handleCountryData()}
+        // labels={handleCountryData()}
       />
     </div>
   );
