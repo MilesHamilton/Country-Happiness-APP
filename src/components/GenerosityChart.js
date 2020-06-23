@@ -36,8 +36,8 @@ export default function GenerosityChart() {
   console.log(handleGenerosityData());
 
   return (
-    <div>
-      <h3>Country Generosity</h3>
+    <>
+      <h3>Generosity</h3>
       <VictoryLegend
         // x={125}
         // y={10}
@@ -77,6 +77,6 @@ export default function GenerosityChart() {
         data={handleGenerosityData()}
         labels={handleGenerosityData()}
       />
-    </div>
+    </>
   );
 }

@@ -41,14 +41,14 @@ export default function CorruptionChart({}) {
 
   return (
     <>
-      <h1>Perceptions of Corruption</h1>
+      <h3>Perceptions of Corruption</h3>
       <VictoryChart responsive={false} width={800} height={500} minDomain={0.2}>
         <VictoryScatter
           style={{ data: { fill: '#c43a31' } }}
           alignment='start'
-          size={15}
+          size={25}
           data={handleCorruptionData()}
-          labelComponent={<VictoryLabel dy={-20} />}
+          labelComponent={<VictoryLabel dy={-30} />}
         />
       </VictoryChart>
     </>

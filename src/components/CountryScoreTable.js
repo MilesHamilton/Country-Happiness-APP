@@ -37,8 +37,11 @@ const CountryScoreTable = () => {
             <td>{elm['Country or region']}</td>
             <td>{elm.Score}</td>
             <td className='operation'>
-              <a class='btn-floating btn-tiny waves-effect waves-light red'>
-                <i class='material-icons' onClick={() => removeData(elm._id)}>
+              <a className='btn-floating btn-tiny waves-effect waves-light red'>
+                <i
+                  className='material-icons'
+                  onClick={() => removeData(elm._id)}
+                >
                   remove
                 </i>
               </a>

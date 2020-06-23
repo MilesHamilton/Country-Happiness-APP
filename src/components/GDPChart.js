@@ -1,4 +1,10 @@
-import { VictoryVoronoi } from 'victory';
+import {
+  VictoryChart,
+  VictoryLabel,
+  VictoryBar,
+  VictoryStack,
+  VictoryAxis,
+} from 'victory';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -16,34 +22,48 @@ const GDPChart = () => {
     fetch();
   }, []);
 
-  const handleCountryData = () => {
-    return (
-      data &&
-      data.map((elm) => {
-        return elm['Country or region'];
-      })
-    );
-  };
-
   const handleGDPData = () => {
     return (
       data &&
       data.map((elm) => {
-        return { x: elm['GDP per capita'], y: elm['GDP per capita'] };
+        return { x: elm['Country or region'], y: elm['GDP per capita'] };
       })
     );
   };
   console.log(handleGDPData());
 
+  const width = 400;
+  const height = 400;
+
   return (
-    <div>
-      <VictoryVoronoi
-        style={{ data: { stroke: '#c43a31', strokeWidth: 2 } }}
-        width={200}
-        height={200}
-        data={handleGDPData()}
-      />
-    </div>
+    <>
+      <h3>GDP per capita</h3>
+      <VictoryChart horizontal height={height} width={width} padding={40}>
+        <VictoryStack style={{ data: { width: 25 }, labels: { fontSize: 15 } }}>
+          <VictoryBar
+            style={{ data: { fill: 'tomato' } }}
+            data={handleGDPData()}
+          />
+          <VictoryBar
+            style={{ data: { fill: 'orange' } }}
+            data={handleGDPData()}
+            labels={({ datum }) => `${Math.abs(datum.y)}`}
+          />
+        </VictoryStack>
+
+        <VictoryAxis
+          style={{
+            axis: { stroke: 'transparent' },
+            ticks: { stroke: 'transparent' },
+            tickLabels: { fontSize: 15, fill: 'black' },
+          }}
+          tickLabelComponent={
+            <VictoryLabel x={width / 2} textAnchor='middle' />
+          }
+          tickValues={data.map((point) => point['GDP per capita'].x).reverse()}
+        />
+      </VictoryChart>
+    </>
   );
 };
 
