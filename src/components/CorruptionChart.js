@@ -1,4 +1,4 @@
-import { VictoryChart, VictoryBar } from 'victory';
+import { VictoryChart, VictoryScatter, VictoryLabel } from 'victory';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -23,24 +23,34 @@ export default function CorruptionChart({}) {
       })
     );
   };
+  console.log(handleCountryData());
 
-  const handleSocialData = () => {
+  const handleCorruptionData = () => {
     return (
       data &&
       data.map((elm) => {
-        return elm['Social support'];
+        return {
+          y: elm['Perceptions of corruption'],
+          x: elm['Country or region'],
+          label: elm['Perceptions of corruption'],
+        };
       })
     );
   };
+  console.log(handleCorruptionData());
 
   return (
-    <div>
-      <VictoryChart domainPadding={20} width={200} height={200}>
-        <VictoryBar
+    <>
+      <h1>Perceptions of Corruption</h1>
+      <VictoryChart responsive={false} width={800} height={500} minDomain={0.2}>
+        <VictoryScatter
           style={{ data: { fill: '#c43a31' } }}
-          // data={sampleData}
+          alignment='start'
+          size={15}
+          data={handleCorruptionData()}
+          labelComponent={<VictoryLabel dy={-20} />}
         />
       </VictoryChart>
-    </div>
+    </>
   );
 }

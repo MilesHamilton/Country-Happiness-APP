@@ -1,10 +1,4 @@
-import {
-  VictoryBar,
-  VictoryChart,
-  VictoryTheme,
-  VictoryTooltip,
-} from 'victory';
-import axios from 'axios';
+import { VictoryBar, VictoryChart, VictoryTooltip } from 'victory';
 import React, { Component } from 'react';
 
 export default class SocialSupportChart extends Component {
@@ -27,7 +21,7 @@ export default class SocialSupportChart extends Component {
   handleSocialData = () => {
     return (
       this.state.data &&
-      this.state.data.map((elm, index) => {
+      this.state.data.map((elm) => {
         return {
           y: elm['Social support'],
           x: elm['Country or region'],
@@ -41,14 +35,18 @@ export default class SocialSupportChart extends Component {
     return (
       <>
         <h3>Social Support</h3>
-        <VictoryChart
-          theme={VictoryTheme.material}
-          responsive={false}
-          width={700}
-          height={500}
-        >
+        <VictoryChart responsive={false} width={700} height={500}>
           <VictoryBar
-            // cornerRadius={{ topLeft: ({ datum }) => datum.x * 4 }}
+            labelComponent={
+              <VictoryTooltip
+                pointerOrientation='bottom'
+                flyoutWidth={50}
+                flyoutHeight={20}
+                pointerWidth={10}
+                cornerRadius={10}
+                active
+              />
+            }
             style={{
               data: {
                 fill: '#c43a31',
@@ -56,7 +54,6 @@ export default class SocialSupportChart extends Component {
               },
             }}
             alignment='start'
-            labelComponent={<VictoryTooltip />}
             data={this.handleSocialData()}
           />
         </VictoryChart>

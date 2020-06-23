@@ -1,4 +1,4 @@
-import { VictoryPie, VictoryTooltip } from 'victory';
+import { VictoryPie, VictoryLegend } from 'victory';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -19,7 +19,7 @@ export default function GenerosityChart() {
     return (
       data &&
       data.map((elm) => {
-        return elm['Country or region'];
+        return { name: elm['Country or region'] };
       })
     );
   };
@@ -37,9 +37,28 @@ export default function GenerosityChart() {
 
   return (
     <div>
-      <h3>Country Generosity Chart</h3>
+      <h3>Country Generosity</h3>
+      <VictoryLegend
+        // x={125}
+        // y={10}
+        orientation='vertical'
+        gutter={20}
+        // style={{ border: { stroke: 'black' } }}
+        data={handleCountryData()}
+        colorScale={[
+          'tomato',
+          'orange',
+          'gold',
+          'cyan',
+          'navy',
+          'blue',
+          'red',
+          'skyblue',
+          'brown',
+          'pink',
+        ]}
+      />
       <VictoryPie
-        labelComponent={<VictoryTooltip cornerRadius={0} />}
         innerRadius={80}
         colorScale={[
           'tomato',
@@ -53,8 +72,10 @@ export default function GenerosityChart() {
           'brown',
           'pink',
         ]}
+        labelRadius={({ innerRadius }) => innerRadius + 30}
+        style={{ labels: { fill: 'white', fontSize: 10, fontWeight: 'bold' } }}
         data={handleGenerosityData()}
-        // labels={handleCountryData()}
+        labels={handleGenerosityData()}
       />
     </div>
   );
