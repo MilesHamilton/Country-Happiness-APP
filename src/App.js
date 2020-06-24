@@ -16,7 +16,7 @@ export default function App() {
         <Nav />
         <div className='wrapper'>
           <div className='row'>
-            <div className='col s6'>
+            <div className='col s12'>
               <CountryScoreTable />
             </div>
             <div className='col s6'>

@@ -10,20 +10,9 @@ export default function CorruptionChart({}) {
         'https://enigmatic-temple-08680.herokuapp.com/page/1/10'
       );
       setData(res.data);
-      console.log(res.data);
     };
     fetch();
   }, []);
-
-  const handleCountryData = () => {
-    return (
-      data &&
-      data.map((elm) => {
-        return elm['Country or region'];
-      })
-    );
-  };
-  console.log(handleCountryData());
 
   const handleCorruptionData = () => {
     return (
@@ -37,7 +26,6 @@ export default function CorruptionChart({}) {
       })
     );
   };
-  console.log(handleCorruptionData());
 
   return (
     <>

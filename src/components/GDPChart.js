@@ -17,7 +17,6 @@ const GDPChart = () => {
         'https://enigmatic-temple-08680.herokuapp.com/page/1/10'
       );
       setData(res.data);
-      console.log(res.data);
     };
     fetch();
   }, []);
@@ -30,7 +29,6 @@ const GDPChart = () => {
       })
     );
   };
-  console.log(handleGDPData());
 
   const width = 400;
   const height = 400;

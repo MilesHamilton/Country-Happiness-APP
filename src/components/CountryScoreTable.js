@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './CSS/countryScoreTable.css';
 
 const CountryScoreTable = () => {
   const [data, setData] = useState([]);
-
-  // console.log(data);
 
   useEffect(() => {
     const fetch = async () => {
@@ -26,16 +25,23 @@ const CountryScoreTable = () => {
         console.log(err);
       });
   };
-  // console.log(removeData())
+
+  const stylingId = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    height: '100px',
+  };
 
   const renderBody = () => {
     return (
       data &&
       data.map((elm) => {
         return (
-          <tr key={elm._id}>
-            <td>{elm['Country or region']}</td>
-            <td>{elm.Score}</td>
+          <tr key={elm._id} style={stylingId}>
+            <td style={{ margin: '10px 100px 0 0' }}>
+              {elm['Country or region']}
+            </td>
+            <td className='center-align'>{elm.Score}</td>
             <td className='operation'>
               <a className='btn-floating btn-tiny waves-effect waves-light red'>
                 <i

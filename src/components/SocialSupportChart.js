@@ -35,7 +35,7 @@ export default class SocialSupportChart extends Component {
     return (
       <>
         <h3>Social Support</h3>
-        <VictoryChart responsive={false} width={700} height={500}>
+        <VictoryChart responsive={false} width={800} height={500}>
           <VictoryBar
             labelComponent={
               <VictoryTooltip
@@ -50,7 +50,7 @@ export default class SocialSupportChart extends Component {
             style={{
               data: {
                 fill: '#c43a31',
-                width: 15,
+                width: 50,
               },
             }}
             alignment='start'

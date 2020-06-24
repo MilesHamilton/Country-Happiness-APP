@@ -23,7 +23,6 @@ export default function GenerosityChart() {
       })
     );
   };
-  console.log(handleCountryData());
 
   const handleGenerosityData = () => {
     return (
@@ -33,17 +32,13 @@ export default function GenerosityChart() {
       })
     );
   };
-  console.log(handleGenerosityData());
 
   return (
     <>
       <h3>Generosity</h3>
       <VictoryLegend
-        // x={125}
-        // y={10}
         orientation='vertical'
         gutter={20}
-        // style={{ border: { stroke: 'black' } }}
         data={handleCountryData()}
         colorScale={[
           'tomato',
