@@ -1,6 +1,43 @@
+* {
+  box-sizing: border-box !important;
+}
+
 tbody {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 1000px;
+  height: 1800px;
+}
+
+.country-name {
+  margin: 10px 40px 0 0;
+  padding: 0;
+  height: 70%;
+}
+
+.country-score {
+  margin: 10px 40px 0 0;
+  padding: 0;
+  height: 60%;
+}
+
+.btn-flat {
+  padding: 0 !important;
+  height: 100%;
+}
+
+.id {
+  display: flex;
+  flex-wrap: wrap;
+  height: 35px;
+  justify-content: space-between;
+  align-content: center;
+  border-right: solid black 1px;
+  margin: 0 10px;
+  padding: 0 10px;
+}
+
+.wrapper :hover {
+  background-color: lightgray;
+  transition: ease-in 0.2s;
 }

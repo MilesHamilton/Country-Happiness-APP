@@ -26,33 +26,27 @@ const CountryScoreTable = () => {
       });
   };
 
-  const stylingId = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    height: '100px',
-  };
-
   const renderBody = () => {
     return (
       data &&
       data.map((elm) => {
         return (
-          <tr key={elm._id} style={stylingId}>
-            <td style={{ margin: '10px 100px 0 0' }}>
-              {elm['Country or region']}
-            </td>
-            <td className='center-align'>{elm.Score}</td>
-            <td className='operation'>
-              <a className='btn-floating btn-tiny waves-effect waves-light red'>
-                <i
-                  className='material-icons'
-                  onClick={() => removeData(elm._id)}
-                >
-                  remove
-                </i>
-              </a>
-            </td>
-          </tr>
+          <>
+            <div className='wrapper'>
+              <tr key={elm._id} className='id'>
+                <td className='country-name'>{elm['Country or region']}</td>
+                <td className='center-align country-score'>{elm.Score}</td>
+                <a className='btn-flat'>
+                  <i
+                    className='material-icons'
+                    onClick={() => removeData(elm._id)}
+                  >
+                    remove
+                  </i>
+                </a>
+              </tr>
+            </div>
+          </>
         );
       })
     );
@@ -60,7 +54,7 @@ const CountryScoreTable = () => {
 
   return (
     <>
-      <table className='highlight'>
+      <table className='striped'>
         <thead>
           <tr>
             <th>Full Rankings</th>

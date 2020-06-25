@@ -12,28 +12,26 @@ import React from 'react';
 export default function App() {
   return (
     <div>
-      <div>
-        <Nav />
-        <div className='wrapper'>
-          <div className='row'>
-            <div className='col s12'>
-              <CountryScoreTable />
-            </div>
-            <div className='col s6'>
-              <SocialSupportChart />
-            </div>
-            <div className='col s6'>
-              <GenerosityChart />
-            </div>
-            <div className='col s6'>
-              <CorruptionChart />
-            </div>
-            <div className='col s6'>
-              <GDPChart />
-            </div>
-            <div className='col s6'>
-              <Form />
-            </div>
+      <Nav />
+      <div className='container'>
+        <div className='row'>
+          <div className='col s12'>
+            <CountryScoreTable />
+          </div>
+          <div className='col s6'>
+            <SocialSupportChart />
+          </div>
+          <div className='col s6'>
+            <GenerosityChart />
+          </div>
+          <div className='col s6'>
+            <CorruptionChart />
+          </div>
+          <div className='col s6'>
+            <GDPChart />
+          </div>
+          <div className='col s6'>
+            <Form />
           </div>
         </div>
       </div>
