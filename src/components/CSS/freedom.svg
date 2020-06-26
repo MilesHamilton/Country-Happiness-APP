@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32.75px"
+	 height="32.75px" viewBox="0 0 32.75 32.75" enable-background="new 0 0 32.75 32.75" xml:space="preserve">
+<pattern  x="-486.601" y="1548.54" width="22.263" height="22.263" patternUnits="userSpaceOnUse" id="Nueva_muestra_de_motivo_6" viewBox="0 -22.263 22.263 22.263" overflow="visible">
+	<g>
+		<polygon fill="none" points="0,-22.263 22.263,-22.263 22.263,0 0,0 		"/>
+		<polygon fill="#FFFFFF" points="4.152,-22.263 0,-18.11 0,-16.696 5.566,-22.263 		"/>
+		<polygon fill="#FFFFFF" points="9.718,-22.263 0,-12.544 0,-11.13 11.132,-22.263 		"/>
+		<polygon fill="#FFFFFF" points="15.283,-22.263 0,-6.979 0,-5.564 16.697,-22.263 		"/>
+		<polygon fill="#FFFFFF" points="22.263,-22.263 20.85,-22.263 0,-1.413 0,0 0.002,0 22.263,-22.261 		"/>
+		<polygon fill="#FFFFFF" points="22.263,-18.109 4.153,0 5.567,0 22.263,-16.695 		"/>
+		<polygon fill="#FFFFFF" points="22.263,-12.544 9.719,0 11.133,0 22.263,-11.13 		"/>
+		<polygon fill="#FFFFFF" points="22.263,-6.978 15.285,0 16.699,0 22.263,-5.563 		"/>
+		<polygon fill="#FFFFFF" points="22.263,-1.412 20.851,0 22.263,0 		"/>
+	</g>
+</pattern>
+<g id="grid" display="none">
+	<g id="WORLD_MAP_1_" display="inline">
+		<g id="WORLD_MAP_2_">
+			<g id="social_quote">
+				<g id="ICON_-_group_1_">
+				</g>
+				<g id="ICON_-_group">
+				</g>
+				<g id="thumb">
+				</g>
+				<g id="thumb_1_">
+				</g>
+			</g>
+		</g>
+	</g>
+	<rect x="-10.526" y="1.167" display="inline" opacity="0.5" fill="#EEF7FD" width="57.682" height="1512.358"/>
+	<polygon display="inline" opacity="0.5" fill="#EEF7FD" points="55.14,1.167 -10.287,1.167 -10.287,1513.525 55.14,1513.525 
+		120.565,1513.525 120.565,1.167 	"/>
+	<g id="HORIZONTAL_BARS_-_More_than_4_items_1_" display="inline">
+		<g id="PIE_CHART_-_2_col">
+		</g>
+	</g>
+</g>
+<g id="content">
+	<g>
+		<circle fill="#83CECB" cx="16.375" cy="16.261" r="16.375"/>
+		<path fill="#FFFFFF" d="M16.508,26.955c1.701,0,3.09-1.387,3.09-3.089c0-1.702-1.389-3.09-3.09-3.09s-3.09,1.389-3.09,3.09
+			C13.418,25.568,14.807,26.955,16.508,26.955"/>
+		<path fill="#FFFFFF" d="M20.393,14.042c0,1.364-0.602,2.144-1.561,2.761c-0.828,0.52-1.299,1.04-1.299,1.657v0.276h-2.162v-0.438
+			c0-0.747,0.197-1.543,1.107-2.192c0.875-0.667,1.283-0.959,1.283-1.918c0-0.746-0.555-1.25-1.367-1.25
+			c-0.859,0-1.461,0.666-1.541,1.917l-2.309-0.504c0.309-2.177,1.771-3.347,4.062-3.347C19.027,11.004,20.393,12.401,20.393,14.042z
+			"/>
+		<g>
+			<defs>
+				<circle id="SVGID_1_" cx="16.375" cy="16.261" r="16.375"/>
+			</defs>
+			<clipPath id="SVGID_2_">
+				<use xlink:href="#SVGID_1_"  overflow="visible"/>
+			</clipPath>
+			<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M13.586,34.175h6.283c0.5-0.045,0.816-0.226,1.045-0.544
+				c0.135-0.227,0.18,0.503,0.225,0.139v-5.035c-0.045-0.953-0.543-1.407-1.496-1.407h-0.068l-0.045,0.046
+				c-0.771,0.77-1.77,1.179-2.904,1.224c-1.133-0.045-2.086-0.454-2.902-1.224l-0.045-0.046h-0.092
+				c-0.951,0-1.451,0.454-1.496,1.407v5.035v0.018c0.002,0.354,0.092-0.38,0.227-0.157C12.543,34.04,12.998,34.175,13.586,34.175"/>
+		</g>
+	</g>
+</g>
+</svg>

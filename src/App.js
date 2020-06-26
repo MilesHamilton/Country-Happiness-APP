@@ -1,12 +1,15 @@
 import './App.css';
 import Nav from './components/Nav';
+import Info from './components/Info';
 import CountryScoreTable from './components/CountryScoreTable';
 import CorruptionChart from './components/CorruptionChart';
 import SocialSupportChart from './components/SocialSupportChart';
 import GDPChart from './components/GDPChart';
 import GenerosityChart from './components/GenerosityChart';
 import Form from './components/Form';
+
 import React from 'react';
+
 // import Posts from './components/Posts'
 
 export default function App() {
@@ -16,10 +19,13 @@ export default function App() {
       <div className='container'>
         <div className='row'>
           <div className='col s12'>
+            <Info />
+          </div>
+          <div className='col s12'>
             <CountryScoreTable />
           </div>
-          <div className='col s6'>
-            <SocialSupportChart />
+          <div className='col s12'>
+            <GDPChart />
           </div>
           <div className='col s6'>
             <GenerosityChart />
@@ -28,7 +34,7 @@ export default function App() {
             <CorruptionChart />
           </div>
           <div className='col s6'>
-            <GDPChart />
+            <SocialSupportChart />
           </div>
           <div className='col s6'>
             <Form />

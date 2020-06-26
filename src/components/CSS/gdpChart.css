@@ -1,0 +1,15 @@
+.contain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 50vh;
+}
+
+.gdp-chart {
+  height: 40vh;
+}
+
+.contain_info > img {
+  width: 1rem;
+  height: 3rem;
+}

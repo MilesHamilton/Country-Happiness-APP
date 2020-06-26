@@ -32,12 +32,11 @@ tbody {
   height: 35px;
   justify-content: space-between;
   align-content: center;
-  border-right: solid black 1px;
+  border-right: solid lightgrey 1px;
   margin: 0 10px;
   padding: 0 10px;
 }
 
 .wrapper :hover {
-  background-color: lightgray;
-  transition: ease-in 0.2s;
+  background-color: rgb(235, 233, 233);
 }
