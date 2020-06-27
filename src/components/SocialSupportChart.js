@@ -34,6 +34,12 @@ export default class SocialSupportChart extends Component {
   render() {
     return (
       <>
+        <div className='contain'></div>
+        <div contain_info>
+          <img></img>
+          <h5></h5>
+          <p></p>
+        </div>
         <h3>Social Support</h3>
         <VictoryChart responsive={false} width={800} height={500}>
           <VictoryBar

@@ -10,8 +10,6 @@ import Form from './components/Form';
 
 import React from 'react';
 
-// import Posts from './components/Posts'
-
 export default function App() {
   return (
     <div>
@@ -27,13 +25,13 @@ export default function App() {
           <div className='col s12'>
             <GDPChart />
           </div>
-          <div className='col s6'>
+          <div className='col s12'>
             <GenerosityChart />
           </div>
-          <div className='col s6'>
+          <div className='col s12'>
             <CorruptionChart />
           </div>
-          <div className='col s6'>
+          <div className='col s12'>
             <SocialSupportChart />
           </div>
           <div className='col s6'>

@@ -5,10 +5,11 @@ import {
   VictoryStack,
   VictoryAxis,
 } from 'victory';
-import handleViewport from 'react-in-viewport';
+
 import './CSS/gdpChart.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import TrackVisibility from 'react-on-screen';
 
 const GDPChart = () => {
   const [data, setData] = useState([]);
@@ -32,56 +33,69 @@ const GDPChart = () => {
     );
   };
 
+  const height = 500;
   const width = 500;
-  const height = 600;
 
   return (
     <div className='contain'>
       <div className='contain_info'>
         <img src={require('./CSS/gdp.svg')}></img>
-        <p>GDP per Capita</p>
+        <h5>GDP per Capita</h5>
+        <p>
+          Here displays the top ten countries for GDP per capita. It is
+          calculated in terms of Purchasing Power Parity (PPP) from the World
+          Development Indicater (WDI) taken from the World Bank. after
+          adujustment for population growth the index is displayed using the
+          natural log of GDP per capita, as this form fits significantly better
+          than the raw data.
+        </p>
       </div>
-      <div className='gdp-chart'>
-        <VictoryChart
-          horizontal
-          height={height}
-          width={width}
-          padding={40}
-          animate={{
-            duration: 2000,
-            onLoad: { duration: 1000 },
-            onEnter: { duration: 500, before: () => ({ y: 0 }) },
-          }}
-        >
-          <VictoryStack
-            style={{ data: { width: 35 }, labels: { fontSize: 15 } }}
-          >
-            <VictoryBar
-              style={{ data: { fill: 'tomato' } }}
-              data={handleGDPData()}
-            />
-            <VictoryBar
-              style={{ data: { fill: 'orange' } }}
-              data={handleGDPData()}
-              labels={({ datum }) => `${Math.abs(datum.y)}`}
-            />
-          </VictoryStack>
+      <TrackVisibility offset={600} once>
+        {({ isVisible }) =>
+          isVisible && (
+            <div className='gdp-chart'>
+              <VictoryChart
+                horizontal
+                height={height}
+                width={width}
+                padding={40}
+                animate={{
+                  duration: 1500,
+                  onLoad: { duration: 1000 },
+                }}
+              >
+                <VictoryStack
+                  style={{ data: { width: 35 }, labels: { fontSize: 15 } }}
+                >
+                  <VictoryBar
+                    style={{ data: { fill: 'tomato' } }}
+                    data={handleGDPData()}
+                  />
+                  <VictoryBar
+                    style={{ data: { fill: 'orange' } }}
+                    data={handleGDPData()}
+                    labels={({ datum }) => `${Math.abs(datum.y)}`}
+                  />
+                </VictoryStack>
 
-          <VictoryAxis
-            style={{
-              axis: { stroke: 'transparent' },
-              ticks: { stroke: 'transparent' },
-              tickLabels: { fontSize: 15, fill: 'black' },
-            }}
-            tickLabelComponent={
-              <VictoryLabel x={width / 2} textAnchor='middle' />
-            }
-            tickValues={data
-              .map((point) => point['GDP per capita'].x)
-              .reverse()}
-          />
-        </VictoryChart>
-      </div>
+                <VictoryAxis
+                  style={{
+                    axis: { stroke: 'transparent' },
+                    ticks: { stroke: 'transparent' },
+                    tickLabels: { fontSize: 15, fill: 'black' },
+                  }}
+                  tickLabelComponent={
+                    <VictoryLabel x={width / 2} textAnchor='middle' />
+                  }
+                  tickValues={data
+                    .map((point) => point['GDP per capita'].x)
+                    .reverse()}
+                />
+              </VictoryChart>
+            </div>
+          )
+        }
+      </TrackVisibility>
     </div>
   );
 };

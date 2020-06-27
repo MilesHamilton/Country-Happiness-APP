@@ -1,0 +1,28 @@
+.generosity-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  height: 50vh;
+  margin: 1rem 0;
+  border-top: solid lightgrey 1px;
+  padding-top: 0rem;
+}
+
+.generosity-chart {
+  width: 40%;
+  justify-content: left;
+}
+
+.generosity-legend {
+  margin-top: 50px;
+}
+
+.generosity-container_info > img {
+  height: 5rem;
+}
+
+.generosity-container_info {
+  margin-top: 3rem;
+  width: 30%;
+  align-self: center;
+}

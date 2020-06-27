@@ -54,7 +54,7 @@ const CountryScoreTable = () => {
 
   return (
     <>
-      <table className='striped'>
+      <table className='striped responsive'>
         <thead>
           <tr>
             <th>Full Rankings</th>
