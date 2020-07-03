@@ -1,6 +1,6 @@
 # Country Happiness Index
 
-An app that shows the current world happiness data (2019) [here]('country-happiness-score.surge.sh')
+An app that shows the current world happiness data (2019) [here]('https://countryhappinessindex.vercel.app/')
 
 ## Description
 
