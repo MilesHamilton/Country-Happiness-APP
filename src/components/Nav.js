@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './CSS/nav.css';
 
-export class Nav extends Component {
-  render() {
-    return (
-      <nav>
-        <div className='nav-wrapper'>
-          <a href='#' className='brand-logo'>
-            Logo
-          </a>
-        </div>
-      </nav>
-    );
-  }
+export default function Nav() {
+  return (
+    <nav>
+      <div className='nav-wrapper'>
+        <a href='#' className='brand-logo'>
+          Country Happiness Index
+        </a>
+      </div>
+    </nav>
+  );
 }
-
-export default Nav;

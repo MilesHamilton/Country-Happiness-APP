@@ -1,5 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .table {
   display: flex;
   flex-wrap: wrap;
   height: 1800;
+}
+
+p {
+  overflow: hidden;
 }

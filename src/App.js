@@ -6,7 +6,7 @@ import CorruptionChart from './components/CorruptionChart';
 import SocialSupportChart from './components/SocialSupportChart';
 import GDPChart from './components/GDPChart';
 import GenerosityChart from './components/GenerosityChart';
-import Form from './components/Form';
+import Layout from './components/Layout';
 
 import React from 'react';
 
@@ -14,8 +14,12 @@ export default function App() {
   return (
     <div>
       <Nav />
+
       <div className='container'>
         <div className='row'>
+          <div className='layout'>
+            <Layout />
+          </div>
           <div className='col s12'>
             <Info />
           </div>
@@ -34,9 +38,9 @@ export default function App() {
           <div className='col s12'>
             <SocialSupportChart />
           </div>
-          <div className='col s6'>
+          {/* <div className='col s6'>
             <Form />
-          </div>
+          </div> */}
         </div>
       </div>
       <footer></footer>

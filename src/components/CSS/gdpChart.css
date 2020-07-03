@@ -4,7 +4,7 @@
 .contain {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   height: 50vh;
   margin: 3rem 0;
   border-top: solid lightgrey 1px;
@@ -12,7 +12,8 @@
 }
 
 .gdp-chart {
-  margin-top: 1rem;
+  margin: 0rem 1rem 0 4rem;
+  width: 100%;
 }
 
 .contain_info > img {
@@ -20,6 +21,6 @@
 }
 
 .contain_info {
-  margin-top: 2rem;
+  margin: 2rem 4rem 0 0;
   width: 40%;
 }

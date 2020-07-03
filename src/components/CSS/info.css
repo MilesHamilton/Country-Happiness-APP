@@ -1,0 +1,49 @@
+.icons img {
+  height: 7rem;
+  margin-bottom: 1rem;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.icons > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.icons i {
+  position: relative;
+  top: 2.75rem;
+  color: rgb(78, 76, 76);
+}
+
+.icons > div > p {
+  font-size: 12px;
+}
+
+.icons > .happiness {
+  margin-left: 4rem;
+}
+
+.icons .equals {
+  position: relative;
+  left: 1.5rem;
+}
+
+.icon_info h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon_container {
+  border-top: solid lightgrey 1px;
+  border-bottom: solid lightgrey 1px;
+
+  margin-top: 20px;
+}

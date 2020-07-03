@@ -2,13 +2,9 @@ import { VictoryPie, VictoryLegend } from 'victory';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CSS/generosityChart.css';
-import TrackVisibility from 'react-on-screen';
-
-const defaultGraphicData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 export default function GenerosityChart() {
   const [data, setData] = useState([]);
-  const [graphicData, setGraphicData] = useState([defaultGraphicData]);
 
   useEffect(() => {
     const fetch = async () => {
@@ -18,17 +14,6 @@ export default function GenerosityChart() {
       setData(res.data);
     };
     fetch();
-  }, []);
-
-  useEffect(() => {
-    const fetch = async () => {
-      const res = await axios(
-        'https://enigmatic-temple-08680.herokuapp.com/page/1/10'
-      );
-      setGraphicData(res.data['Generosity']);
-    };
-    fetch();
-    console.log(graphicData);
   }, []);
 
   const handleCountryData = () => {
@@ -55,9 +40,10 @@ export default function GenerosityChart() {
         <img src={require('./CSS/generosity.svg')}></img>
         <h5>Generosity</h5>
         <p>
-          Generosity is the residual of regressing the national average of GWP
-          responses to the question “Have you donated money to a charity in the
-          past month?” on GDP per capita.
+          Here shows the top ten most generous countries. Generosity is the
+          residual of regressing the national average of GWP responses to the
+          question “Have you donated money to a charity in the past month?” on
+          GDP per capita.
         </p>
       </div>
 

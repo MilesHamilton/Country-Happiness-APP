@@ -60,8 +60,8 @@ const GDPChart = () => {
                 width={width}
                 padding={40}
                 animate={{
-                  duration: 1500,
-                  onLoad: { duration: 1000 },
+                  duration: 1000,
+                  // onLoad: { duration: 1000 },
                 }}
               >
                 <VictoryStack

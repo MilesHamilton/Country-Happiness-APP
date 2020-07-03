@@ -1,7 +1,7 @@
 .corruption-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  /* justify-content: center; */
   height: 50vh;
   margin: 1rem 0;
   border-top: solid lightgrey 1px;
@@ -9,15 +9,15 @@
 }
 
 .corruption-chart {
-  height: 20rem;
-  opacity: 100%;
+  margin: 4rem 1rem 0 0;
+  width: 100%;
 }
 .corruption-container_info > img {
   height: 5rem;
 }
 
 .corruption-container_info {
-  margin-top: 3rem;
-  width: 30%;
+  margin: 5rem 5rem 0 0;
+  width: 40%;
   align-self: center;
 }
