@@ -9,15 +9,21 @@
 }
 
 .corruption-chart {
-  margin: 4rem 1rem 0 0;
-  width: 100%;
+  margin: 7rem 0rem 0rem 0;
+  width: 80vh;
 }
 .corruption-container_info > img {
   height: 5rem;
 }
 
 .corruption-container_info {
-  margin: 5rem 5rem 0 0;
-  width: 40%;
+  margin: 14rem 5rem 0 0;
+  width: 60vh;
+  height: 60vh;
   align-self: center;
+  overflow: hidden;
+}
+
+.corruption-container_info p {
+  overflow: hidden;
 }

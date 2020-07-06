@@ -13,7 +13,7 @@
 
 .gdp-chart {
   margin: 0rem 1rem 0 4rem;
-  width: 100%;
+  width: 50vh;
 }
 
 .contain_info > img {
@@ -21,6 +21,8 @@
 }
 
 .contain_info {
-  margin: 2rem 4rem 0 0;
-  width: 40%;
+  margin: 0 4rem 0 0;
+  width: 60vh;
+  height: 50vh;
+  overflow: hidden;
 }

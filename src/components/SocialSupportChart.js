@@ -49,7 +49,7 @@ export default function SocialSupportChart({}) {
               <VictoryChart
                 responsive={false}
                 width={800}
-                height={500}
+                height={400}
                 animate={{
                   duration: 1000,
                   // onLoad: { duration: 1000 },
