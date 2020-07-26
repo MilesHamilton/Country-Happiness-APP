@@ -30,7 +30,7 @@ export default function CorruptionChart({}) {
   };
 
   return (
-    <div className='corruption-container'>
+    <div className='corruption-container' id='corruption'>
       <div className='corruption-container_info'>
         <img src={require('./CSS/corruption.svg')}></img>
         <h5>Perceptions of Corruption</h5>
@@ -45,15 +45,7 @@ export default function CorruptionChart({}) {
       </div>
 
       <div className='corruption-chart'>
-        <VictoryChart
-          width={850}
-          height={500}
-          minDomain={0.2}
-          // animate={{
-          //   // duration: 2000,
-          //   onLoad: { duration: 2000 },
-          // }}
-        >
+        <VictoryChart width={850} height={500} minDomain={0.2}>
           <VictoryScatter
             style={{ data: { fill: '#c43a31' } }}
             alignment='start'

@@ -6,4 +6,11 @@
 
 .nav-wrapper a {
   font-family: 'Abril Fatface', cursive;
+  text-align: left;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }

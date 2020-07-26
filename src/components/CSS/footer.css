@@ -1,0 +1,27 @@
+.footer-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-wrapper img {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-wrapper a {
+  margin: 12px 10px 0px 10px;
+}
+
+footer {
+  height: 70px;
+  background-color: lightgrey;
+  box-shadow: 6px 17px 12px 16px grey;
+}
+
+.credits {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

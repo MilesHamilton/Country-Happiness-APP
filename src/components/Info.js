@@ -3,7 +3,7 @@ import './CSS/info.css';
 
 export default function Info() {
   return (
-    <div className='icon_container'>
+    <div className='icon_container' id='info'>
       <div className='icon_info'>
         <h4>Measuring world happiness</h4>
         <p>
@@ -24,12 +24,8 @@ export default function Info() {
         </div>
         <i class='material-icons'>add</i>
         <div className='svg-data freedom'>
-          <img src={require('./CSS/freedom.svg')}></img>{' '}
+          <img src={require('./CSS/freedom.svg')}></img>
           <p>Freedom to Make Life Choices</p>
-        </div>
-        <i class='material-icons'>add</i>
-        <div className='svg-data dystopia'>
-          <img src={require('./CSS/dystopia.svg')}></img> <p>Dystopia</p>
         </div>
         <i class='material-icons'>add</i>
         <div className='svg-data life'>

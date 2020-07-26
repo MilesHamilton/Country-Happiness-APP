@@ -1,9 +1,9 @@
 import { VictoryPie, VictoryLegend } from 'victory';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './CSS/generosityChart.css';
+import './CSS/freedom.css';
 
-export default function GenerosityChart() {
+export default function FreedomChart() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -25,31 +25,31 @@ export default function GenerosityChart() {
     );
   };
 
-  const handleGenerosityData = () => {
+  const handleFreedomData = () => {
     return (
       data &&
       data.map((elm) => {
-        return elm['Generosity'];
+        return elm['Freedom to make life choices'];
       })
     );
   };
 
   return (
-    <div className='generosity-container' id='generosity'>
-      <div className='generosity-container_info'>
-        <img src={require('./CSS/generosity.svg')}></img>
-        <h5>Generosity</h5>
+    <div className='freedom-container' id='freedom'>
+      <div className='freedom-container_info'>
+        <img src={require('./CSS/freedom.svg')}></img>
+        <h5>Freedom to Make Life Choices</h5>
         <p>
-          Here shows the top ten most generous countries. Generosity is the
-          residual of regressing the national average of GWP responses to the
-          question “Have you donated money to a charity in the past month?” on
-          GDP per capita.
+          Here shows the data for the top ten countries that rank in freedom to
+          make life choices. the data shows the national average of binary
+          responses to the GWP question, "are you satisfied or dissatisfies with
+          your freedom to choose what you do in life?"
         </p>
       </div>
 
-      <div className='generosity-chart'>
+      <div className='freedom-chart'>
         <VictoryPie
-          innerRadius={80}
+          innerRadius={0}
           colorScale={[
             'green',
             'orange',
@@ -67,15 +67,15 @@ export default function GenerosityChart() {
           //   duration: 1500,
           //   onLoad: { duration: 1000 },
           // }}
-          labelRadius={({ innerRadius }) => innerRadius + 30}
+          labelRadius={({ innerRadius }) => innerRadius + 80}
           style={{
             labels: { fill: 'white', fontSize: 15, fontWeight: 'bold' },
           }}
-          data={handleGenerosityData()}
-          labels={handleGenerosityData()}
+          data={handleFreedomData()}
+          labels={handleFreedomData()}
         />
       </div>
-      <div className='generosity-legend'>
+      <div className='freedom-legend'>
         <VictoryLegend
           orientation='vertical'
           gutter={0}

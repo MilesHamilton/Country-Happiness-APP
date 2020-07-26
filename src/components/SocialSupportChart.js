@@ -30,7 +30,7 @@ export default function SocialSupportChart({}) {
   };
 
   return (
-    <div className='social-container'>
+    <div className='social-container' id='social'>
       <div className='social-container_info'>
         <img src={require('./CSS/social.svg')}></img>
         <h5>Social Support</h5>

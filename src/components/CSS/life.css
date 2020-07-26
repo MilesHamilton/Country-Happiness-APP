@@ -1,25 +1,24 @@
-* {
-  box-sizing: border-box;
-}
-.contain {
+.life-container {
   display: flex;
-  flex-direction: row;
-  height: 50vh;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  height: 60vh;
   margin: 3rem 0;
   border-top: solid lightgrey 1px;
   padding-top: 3rem;
+  border-bottom: solid lightgrey 1px;
 }
 
-.gdp-chart {
+.life {
   margin: 0rem 1rem 0 4rem;
   width: 50vh;
 }
 
-.contain_info > img {
+.life-container_info > img {
   height: 5rem;
 }
 
-.contain_info {
+.life-container_info {
   margin: 0 4rem 0 0;
   width: 60vh;
   height: 50vh;

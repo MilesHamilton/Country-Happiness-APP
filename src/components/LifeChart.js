@@ -6,12 +6,12 @@ import {
   VictoryAxis,
 } from 'victory';
 
-import './CSS/gdpChart.css';
+import './CSS/life.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TrackVisibility from 'react-on-screen';
 
-const GDPChart = () => {
+const LifeChart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,11 +24,14 @@ const GDPChart = () => {
     fetch();
   }, []);
 
-  const handleGDPData = () => {
+  const handleLifeData = () => {
     return (
       data &&
       data.map((elm) => {
-        return { x: elm['Country or region'], y: elm['GDP per capita'] };
+        return {
+          x: elm['Country or region'],
+          y: elm['Healthy life expectancy'],
+        };
       })
     );
   };
@@ -37,17 +40,17 @@ const GDPChart = () => {
   const width = 500;
 
   return (
-    <div className='contain' id='gdp'>
-      <div className='contain_info'>
-        <img src={require('./CSS/gdp.svg')}></img>
-        <h5>GDP per Capita</h5>
+    <div className='life-container' id='life'>
+      <div className='life-container_info'>
+        <img src={require('./CSS/life.svg')}></img>
+        <h5>Healthy Life Expectancy</h5>
         <p>
-          Here displays the top ten countries for GDP per capita. It is
-          calculated in terms of Purchasing Power Parity (PPP) from the World
-          Development Indicater (WDI) taken from the World Bank. after
-          adujustment for population growth the index is displayed using the
-          natural log of GDP per capita, as this form fits significantly better
-          than the raw data.
+          Here displays the top ten countries for healthy life expectancy. the
+          data for healthy life expectancy at birth is constructed based on data
+          from the Wolrd Health Organization (WHO) Global Health Observatory
+          data repository, with data available for 2005, 2010, 2015, and 2016.
+          To match this report's sample period, interpolation and extrapolation
+          are used.
         </p>
       </div>
       <TrackVisibility offset={600} once>
@@ -68,12 +71,12 @@ const GDPChart = () => {
                   style={{ data: { width: 35 }, labels: { fontSize: 15 } }}
                 >
                   <VictoryBar
-                    style={{ data: { fill: 'tomato' } }}
-                    data={handleGDPData()}
+                    style={{ data: { fill: 'blue' } }}
+                    data={handleLifeData()}
                   />
                   <VictoryBar
-                    style={{ data: { fill: 'orange' } }}
-                    data={handleGDPData()}
+                    style={{ data: { fill: 'cyan' } }}
+                    data={handleLifeData()}
                     labels={({ datum }) => `${Math.abs(datum.y)}`}
                   />
                 </VictoryStack>
@@ -88,7 +91,7 @@ const GDPChart = () => {
                     <VictoryLabel x={width / 2} textAnchor='middle' />
                   }
                   tickValues={data
-                    .map((point) => point['GDP per capita'].x)
+                    .map((point) => point['Healthy life expectancy'].x)
                     .reverse()}
                 />
               </VictoryChart>
@@ -100,4 +103,4 @@ const GDPChart = () => {
   );
 };
 
-export default GDPChart;
+export default LifeChart;

@@ -7,14 +7,22 @@ import SocialSupportChart from './components/SocialSupportChart';
 import GDPChart from './components/GDPChart';
 import GenerosityChart from './components/GenerosityChart';
 import Layout from './components/Layout';
-
 import React from 'react';
+import FreedomChart from './components/FreedomChart';
+import LifeChart from './components/LifeChart';
+import Footer from './components/Footer';
+
+var dcroll = require('react-scroll');
+var E3vents = dcroll.Events;
+
+E3vents.scrollEvent.register('begin', function (to, element) {
+  console.log('begin', to, element);
+});
 
 export default function App() {
   return (
     <div>
       <Nav />
-
       <div className='container'>
         <div className='row'>
           <div className='layout'>
@@ -38,12 +46,15 @@ export default function App() {
           <div className='col s12'>
             <SocialSupportChart />
           </div>
-          {/* <div className='col s6'>
-            <Form />
-          </div> */}
+          <div className='col s12'>
+            <FreedomChart />
+          </div>
+          <div className='col s12'>
+            <LifeChart />
+          </div>
         </div>
       </div>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }

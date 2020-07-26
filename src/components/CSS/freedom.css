@@ -1,0 +1,28 @@
+.freedom-container {
+  display: flex;
+  flex-direction: reverse;
+  justify-content: space-evenly;
+  height: 50vh;
+  margin: 1rem 0;
+  border-top: solid lightgrey 1px;
+  padding-top: 0rem;
+}
+
+.freedom-chart {
+  width: 40%;
+  justify-content: left;
+}
+
+.freedom-legend {
+  margin-top: 50px;
+}
+
+.freedom-container_info > img {
+  height: 5rem;
+}
+
+.freedom-container_info {
+  margin-top: 3rem;
+  width: 30%;
+  align-self: center;
+}
