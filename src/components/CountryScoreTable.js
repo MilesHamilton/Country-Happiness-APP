@@ -32,7 +32,7 @@ const CountryScoreTable = () => {
       data.map((elm) => {
         return (
           <div id='table'>
-            <div className='wrapper'>
+            <table className='wrapper responsive-table'>
               <tr key={elm._id} className='id responsive-table'>
                 <td className='country-name'>{elm['Country or region']}</td>
                 <td className='center-align country-score'>{elm.Score}</td>
@@ -45,7 +45,7 @@ const CountryScoreTable = () => {
                   </i>
                 </a>
               </tr>
-            </div>
+            </table>
           </div>
         );
       })

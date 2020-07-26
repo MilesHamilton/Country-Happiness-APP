@@ -67,7 +67,7 @@ export default function FreedomChart() {
           //   duration: 1500,
           //   onLoad: { duration: 1000 },
           // }}
-          labelRadius={({ innerRadius }) => innerRadius + 80}
+          labelRadius={({ innerRadius }) => innerRadius + 100}
           style={{
             labels: { fill: 'white', fontSize: 15, fontWeight: 'bold' },
           }}
@@ -79,6 +79,7 @@ export default function FreedomChart() {
         <VictoryLegend
           orientation='vertical'
           gutter={0}
+          height={300}
           width={120}
           data={handleCountryData()}
           colorScale={[

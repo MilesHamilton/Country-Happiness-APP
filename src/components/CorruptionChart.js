@@ -45,7 +45,11 @@ export default function CorruptionChart({}) {
       </div>
 
       <div className='corruption-chart'>
-        <VictoryChart width={850} height={500} minDomain={0.2}>
+        <VictoryChart
+          width={850}
+          height={500}
+          minDomain={0.1} // animate={{ easing: 'exp' }}
+        >
           <VictoryScatter
             style={{ data: { fill: '#c43a31' } }}
             alignment='start'

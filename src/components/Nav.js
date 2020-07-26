@@ -10,7 +10,7 @@ export default function Nav() {
           <a href='#' className='brand-logo'>
             Country Happiness Index
           </a>
-          <div className='link-wrapper'>
+          <div className='link-wrapper right hide-on-med-and-down'>
             <ul>
               <Link
                 activeClass='active'

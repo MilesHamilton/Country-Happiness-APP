@@ -1,10 +1,17 @@
 import { VictoryPie, VictoryLegend } from 'victory';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import TrackVisibility from 'react-on-screen';
 import './CSS/generosityChart.css';
 
+const defaultGraphic = [
+  { Generosity: 0 },
+  { Generosity: 0 },
+  { Generosity: 0 },
+];
+
 export default function GenerosityChart() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(defaultGraphic);
 
   useEffect(() => {
     const fetch = async () => {
@@ -62,11 +69,13 @@ export default function GenerosityChart() {
             'brown',
             'pink',
           ]}
-          // animate={{ easing: 'exp' }}
-          // animate={{
-          //   duration: 1500,
-          //   onLoad: { duration: 1000 },
-          // }}
+          animate={{
+            onLoad: {
+              duration: 500,
+            },
+            // duration: 1500,
+            // // onLoad: { duration: 1000 },
+          }}
           labelRadius={({ innerRadius }) => innerRadius + 30}
           style={{
             labels: { fill: 'white', fontSize: 15, fontWeight: 'bold' },
@@ -79,6 +88,7 @@ export default function GenerosityChart() {
         <VictoryLegend
           orientation='vertical'
           gutter={0}
+          height={300}
           width={120}
           data={handleCountryData()}
           colorScale={[

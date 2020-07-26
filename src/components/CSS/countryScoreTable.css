@@ -6,8 +6,7 @@ tbody {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 100vh;
-  height: 250vh;
+  height: 270vh;
 }
 
 .country-name {
