@@ -11,14 +11,7 @@ import React from 'react';
 import FreedomChart from './components/FreedomChart';
 import LifeChart from './components/LifeChart';
 import Footer from './components/Footer';
-import TrackVisibility from 'react-on-screen';
 
-var dcroll = require('react-scroll');
-var E3vents = dcroll.Events;
-
-E3vents.scrollEvent.register('begin', function (to, element) {
-  console.log('begin', to, element);
-});
 
 export default function App() {
   return (

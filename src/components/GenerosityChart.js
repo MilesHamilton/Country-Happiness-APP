@@ -1,110 +1,97 @@
-import { VictoryPie, VictoryLegend } from 'victory';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import TrackVisibility from 'react-on-screen';
-import './CSS/generosityChart.css';
+import { VictoryPie, VictoryLegend } from "victory"
+import React, { useState, useEffect } from "react"
+import axios from "axios"
 
-const defaultGraphic = [
-  { Generosity: 0 },
-  { Generosity: 0 },
-  { Generosity: 0 },
-];
+import "./CSS/generosityChart.css"
 
 export default function GenerosityChart() {
-  const [data, setData] = useState(defaultGraphic);
+	const [data, setData] = useState([])
 
-  useEffect(() => {
-    const fetch = async () => {
-      const res = await axios(
-        'https://enigmatic-temple-08680.herokuapp.com/page/1/10'
-      );
-      setData(res.data);
-    };
-    fetch();
-  }, []);
+	useEffect(() => {
+		const fetch = async () => {
+			const res = await axios(
+				"https://enigmatic-temple-08680.herokuapp.com/page/1/10"
+			)
+			setData(res.data)
+		}
+		fetch()
+	}, [])
 
-  const handleCountryData = () => {
-    return (
-      data &&
-      data.map((elm) => {
-        return { name: elm['Country or region'] };
-      })
-    );
-  };
+	const handleCountryData = () => {
+		return (
+			data &&
+			data.map((elm) => {
+				return { name: elm["Country or region"] }
+			})
+		)
+	}
 
-  const handleGenerosityData = () => {
-    return (
-      data &&
-      data.map((elm) => {
-        return elm['Generosity'];
-      })
-    );
-  };
+	const handleGenerosityData = () => {
+		return (
+			data &&
+			data.map((elm) => {
+				return elm["Generosity"]
+			})
+		)
+	}
 
-  return (
-    <div className='generosity-container' id='generosity'>
-      <div className='generosity-container_info'>
-        <img src={require('./CSS/generosity.svg')}></img>
-        <h5>Generosity</h5>
-        <p>
-          Here shows the top ten most generous countries. Generosity is the
-          residual of regressing the national average of GWP responses to the
-          question “Have you donated money to a charity in the past month?” on
-          GDP per capita.
-        </p>
-      </div>
+	return (
+		<div className="generosity-container" id="generosity">
+			<div className="generosity-container_info">
+				<img src={require("./CSS/generosity.svg")}></img>
+				<h5>Generosity</h5>
+				<p>
+					Here shows the top ten most generous countries. Generosity is the
+					residual of regressing the national average of GWP responses to the
+					question “Have you donated money to a charity in the past month?” on
+					GDP per capita.
+				</p>
+			</div>
 
-      <div className='generosity-chart'>
-        <VictoryPie
-          innerRadius={80}
-          colorScale={[
-            'green',
-            'orange',
-            'gold',
-            'cyan',
-            'navy',
-            'blue',
-            'red',
-            'skyblue',
-            'brown',
-            'pink',
-          ]}
-          animate={{
-            onLoad: {
-              duration: 500,
-            },
-            // duration: 1500,
-            // // onLoad: { duration: 1000 },
-          }}
-          labelRadius={({ innerRadius }) => innerRadius + 30}
-          style={{
-            labels: { fill: 'white', fontSize: 15, fontWeight: 'bold' },
-          }}
-          data={handleGenerosityData()}
-          labels={handleGenerosityData()}
-        />
-      </div>
-      <div className='generosity-legend'>
-        <VictoryLegend
-          orientation='vertical'
-          gutter={0}
-          height={300}
-          width={120}
-          data={handleCountryData()}
-          colorScale={[
-            'green',
-            'orange',
-            'gold',
-            'cyan',
-            'navy',
-            'blue',
-            'red',
-            'skyblue',
-            'brown',
-            'pink',
-          ]}
-        />
-      </div>
-    </div>
-  );
+			<div className="generosity-chart">
+				<VictoryPie
+					innerRadius={80}
+					colorScale={[
+						"green",
+						"orange",
+						"gold",
+						"cyan",
+						"navy",
+						"blue",
+						"red",
+						"skyblue",
+						"brown",
+						"pink",
+					]}
+					labelRadius={({ innerRadius }) => innerRadius + 30}
+					style={{
+						labels: { fill: "white", fontSize: 15, fontWeight: "bold" },
+					}}
+					data={handleGenerosityData()}
+					labels={handleGenerosityData()}
+				/>
+			</div>
+			<div className="generosity-legend">
+				<VictoryLegend
+					orientation="vertical"
+					gutter={0}
+					height={300}
+					width={300}
+					data={handleCountryData()}
+					colorScale={[
+						"green",
+						"orange",
+						"gold",
+						"cyan",
+						"navy",
+						"blue",
+						"red",
+						"skyblue",
+						"brown",
+						"pink",
+					]}
+				/>
+			</div>
+		</div>
+	)
 }
